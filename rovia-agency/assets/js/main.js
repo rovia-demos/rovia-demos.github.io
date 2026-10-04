@@ -472,44 +472,9 @@
   })();
 
   /* ------------------------------------------------------------------------
-     9. Curseur et boutons aimantés (ordinateur uniquement)
+     9. Boutons aimantés (ordinateur uniquement)
      ------------------------------------------------------------------------ */
   if (finePointer && !reduced) {
-    var cursor = $("[data-cursor]");
-    if (cursor) {
-      var dot = $(".cursor__dot", cursor), ring = $(".cursor__ring", cursor), label = $("[data-cursor-text]", cursor);
-      var mx = -100, my = -100, rx = -100, ry = -100, raf = null;
-      html.classList.add("has-cursor");
-      cursor.classList.add("is-out");
-
-      var loop = function () {
-        rx += (mx - rx) * 0.2; ry += (my - ry) * 0.2;
-        ring.style.transform = "translate3d(" + rx + "px," + ry + "px,0)";
-        raf = Math.abs(mx - rx) + Math.abs(my - ry) > 0.1 ? requestAnimationFrame(loop) : null;
-      };
-      document.addEventListener("pointermove", function (e) {
-        if (e.pointerType !== "mouse") return;
-        if (cursor.classList.contains("is-out")) { rx = e.clientX; ry = e.clientY; }
-        mx = e.clientX; my = e.clientY;
-        dot.style.transform = "translate3d(" + mx + "px," + my + "px,0)";
-        cursor.classList.remove("is-out");
-        if (!raf) raf = requestAnimationFrame(loop);
-      });
-      document.documentElement.addEventListener("mouseleave", function () { cursor.classList.add("is-out"); });
-      document.addEventListener("pointerover", function (e) {
-        var t = e.target;
-        if (!t.closest) return;
-        var labelled = t.closest("[data-cursor-label]");
-        var text = labelled ? labelled.getAttribute("data-cursor-label") : "";
-        var link = t.closest("a, button, summary, [role=slider]");
-        cursor.classList.toggle("is-hidden", !!t.closest("input, textarea, select"));
-        cursor.classList.toggle("has-label", !!text);
-        cursor.classList.toggle("is-link", !text && !!link);
-        cursor.classList.toggle("on-light", !!t.closest(".steps"));
-        if (text) label.textContent = text;
-      });
-    }
-
     $$("[data-magnetic]").forEach(function (b) {
       b.addEventListener("pointermove", function (e) {
         var r = b.getBoundingClientRect();
