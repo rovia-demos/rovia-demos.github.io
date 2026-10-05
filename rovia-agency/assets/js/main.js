@@ -215,8 +215,17 @@
 
     var line = $(".hero__line path");
     if (line && getComputedStyle($(".hero__line")).display !== "none") {
-      var len = line.getTotalLength();
-      gsap.fromTo(line, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 2.4, ease: "power2.inOut", delay: 0.4 });
+      // Le trait garde la même épaisseur à toutes les tailles d'écran, donc ses tirets
+      // se mesurent en pixels à l'écran : on mesure la longueur réelle affichée.
+      var total = line.getTotalLength(), m = line.getScreenCTM(), len = 0, prev = null;
+      for (var k = 0; k <= 200; k++) {
+        var pt = line.getPointAtLength(total * k / 200);
+        var sx = m.a * pt.x + m.c * pt.y + m.e, sy = m.b * pt.x + m.d * pt.y + m.f;
+        if (prev) len += Math.hypot(sx - prev[0], sy - prev[1]);
+        prev = [sx, sy];
+      }
+      len = Math.ceil(len) + 20;
+      gsap.fromTo(line, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 2.4, ease: "power2.inOut", delay: 0.4, clearProps: "strokeDasharray,strokeDashoffset" });
     }
   }
 

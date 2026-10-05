@@ -332,42 +332,37 @@ section[id], main[id] { scroll-margin-top: var(--header-h); }
   .ba-knob { width: 46px; height: 46px; }
 }
 
-/* ---- Maquette AVANT : site daté (style 2017-2018), dimensions fixes, mis à l'échelle en JS ---- */
-.old { min-height: 100%; background: #fff; font: 15px/1.6 "Helvetica Neue", Arial, sans-serif; color: #666; }
-.old p { margin: 0; }
-.old__top { display: flex; justify-content: space-between; align-items: center; background: #3d6b34; color: #e6efe3; font-size: 13px; padding: 8px 90px; }
-.old__social { display: flex; gap: 6px; }
-.old__social i { font-style: normal; font-weight: bold; font-size: 11px; width: 24px; height: 24px; display: grid; place-items: center; background: rgba(255,255,255,.18); }
-.old__head { display: flex; justify-content: space-between; align-items: center; padding: 22px 90px; border-bottom: 1px solid #e5e5e5; }
-.old__logo { display: flex; align-items: center; gap: 10px; }
-.old__logo svg { width: 38px; height: 38px; fill: none; stroke: #5a9a3c; stroke-width: 2; }
-.old__logo b { display: block; font-size: 24px; color: #4b8a2f; letter-spacing: 1px; line-height: 1.1; }
-.old__logo span { font-size: 12px; color: #999; font-style: italic; }
-.old__menu { display: flex; gap: 28px; font-size: 13px; text-transform: uppercase; letter-spacing: .5px; color: #555; font-weight: bold; }
-.old__menu .on { color: #4b8a2f; border-bottom: 2px solid #4b8a2f; padding-bottom: 4px; }
-.old__slider { position: relative; height: 400px; overflow: hidden; }
-.old__slider img { filter: saturate(.8) contrast(.92); }
-.old__slider::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.38); }
-.old__cap { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
-.old__capt { font-size: 40px; text-transform: uppercase; letter-spacing: 2px; font-weight: 300; text-shadow: 1px 1px 3px rgba(0,0,0,.6); }
-.old__caps { font-size: 17px; font-style: italic; margin-top: 6px !important; }
-.old__more { margin-top: 22px; border: 2px solid #fff; padding: 9px 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-.old__arr { position: absolute; z-index: 1; top: 50%; left: 18px; transform: translateY(-50%); color: #fff; font-size: 54px; line-height: 1; opacity: .8; }
-.old__arr--r { left: auto; right: 18px; }
-.old__dots { position: absolute; z-index: 1; bottom: 16px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; }
-.old__dots i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #fff; }
-.old__dots i.on { background: #fff; }
-.old__intro { text-align: center; padding: 56px 170px 40px; }
-.old__h2 { font-size: 28px; color: #333; text-transform: uppercase; letter-spacing: 1px; }
-.old__sep { display: block; width: 60px; height: 3px; background: #5a9a3c; margin: 14px auto 22px; }
-.old__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 10px 120px 60px; text-align: center; font-size: 14px; }
-.old__cols img { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid #eee; }
-.old__h3 { font-size: 18px; color: #333; text-transform: uppercase; margin-bottom: 8px !important; font-weight: bold; }
-.old__read { display: inline-block; margin-top: 10px; color: #4b8a2f; }
-.old__foot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; background: #2f2f2f; color: #aaa; font-size: 13px; padding: 40px 120px; }
-.old__fh { color: #fff; text-transform: uppercase; font-weight: bold; margin-bottom: 10px !important; }
-.old__fb { background: #3b5998; color: #fff; padding: 10px; text-align: center; }
-.old__copy { background: #262626; color: #777; font-size: 12px; text-align: center; padding: 12px; }
+/* ---- Maquette AVANT : site amateur jamais terminé (style 2016), dimensions fixes, mis à l'échelle en JS ---- */
+.old { position: relative; min-height: 100%; padding-bottom: 70px; background: #7fb347 repeating-linear-gradient(135deg, #8cc152 0 18px, #7fb347 18px 36px); font: 14px/1.45 Verdana, Geneva, sans-serif; color: #555; }
+.old p { margin: 0 0 10px; }
+.old__builder { background: #ffeb3b; color: #333; text-align: center; font: 12px Arial, sans-serif; padding: 5px; margin: 0 !important; }
+.old__page { width: 920px; margin: 18px auto 0; background: #fdfdf6; box-shadow: 0 0 14px rgba(0,0,0,.45); }
+.old__head { background: linear-gradient(#a8e063, #56ab2f); padding: 22px 30px 16px; }
+.old__title { font: italic bold 52px/1 "Brush Script MT", "Segoe Script", "Comic Sans MS", cursive; color: #fff; text-shadow: 3px 3px 4px #2c5e10, 0 0 10px #ff0; margin: 0 !important; transform: scaleX(1.35); transform-origin: left; }
+.old__slogan { color: #fff9c4; font: italic 15px "Comic Sans MS", cursive; margin: 6px 0 0 4px !important; }
+.old__menu { display: flex; margin: 0 !important; background: linear-gradient(#5c5c5c, #2b2b2b); }
+.old__menu span { padding: 11px 18px; color: #ddd; font: bold 13px Arial, sans-serif; border-right: 1px solid #1a1a1a; }
+.old__menu .on { background: linear-gradient(#ff9a00, #e65c00); color: #fff; }
+.old__banner { position: relative; height: 230px; overflow: hidden; border-bottom: 5px solid #ff9a00; }
+.old__banner img { object-fit: fill; height: 100%; width: 100%; }
+.old__banner p { position: absolute; left: 0; right: 0; top: 88px; text-align: center; color: #fff; font: bold 34px Impact, "Arial Black", sans-serif; letter-spacing: 1px; text-shadow: 1px 1px 0 #999; margin: 0 !important; }
+.old__row { display: flex; gap: 24px; padding: 22px 26px; }
+.old__main { flex: 1; text-align: center; }
+.old__h1 { font: bold 26px "Times New Roman", serif; color: #2e7d32; text-decoration: underline; }
+.old__red { color: #f00; font-size: 16px; }
+.old__boxes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+.old__boxes div { border: 1px dashed #bbb; padding: 10px; background: #fff; font-size: 12px; }
+.old__boxes img { height: 92px; object-fit: fill; margin-bottom: 8px; }
+.old__ph { display: grid; place-items: center; height: 92px; background: #e6e6e6; color: #999; font-size: 12px; margin-bottom: 8px; }
+.old__h3 { color: #ff6f00; font: bold 15px Arial, sans-serif; margin-bottom: 4px !important; }
+.old__btn { display: inline-block; padding: 9px 26px; border-radius: 4px; background: linear-gradient(#ffb74d, #f57c00); color: #fff; font: bold 14px Arial, sans-serif; box-shadow: 0 3px 0 #b35900; text-shadow: 0 1px 0 #b35900; }
+.old__side { width: 230px; flex: none; font-size: 12px; }
+.old__wt { background: #56ab2f; color: #fff; font: bold 13px Arial, sans-serif; padding: 6px 8px; margin: 0 0 8px !important; }
+.old__fb { border: 1px solid #ccc; background: #f2f2f2; color: #999; text-align: center; padding: 26px 10px; margin-bottom: 14px; }
+.old__muted { color: #aaa; font-style: italic; }
+.old__foot { text-align: center; font-size: 11px; color: #888; border-top: 1px solid #ddd; padding: 10px; margin: 0 !important; }
+.old__cookie { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(40,40,40,.95); color: #eee; font: 13px Arial, sans-serif; padding: 16px 30px; }
+.old__cookie span { display: inline-block; background: #4caf50; color: #fff; padding: 4px 14px; margin: 0 8px; font-weight: bold; }
 
 /* ---- Maquette APRÈS : site Rovia (s'adapte à la largeur via @container) ---- */
 .nw { position: relative; height: 100%; overflow: hidden; background: #F3F0E8; color: #15261B; font-family: var(--font-body); }
