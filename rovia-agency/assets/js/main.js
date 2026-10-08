@@ -9,7 +9,6 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var hasGSAP = !!(window.gsap && window.ScrollTrigger);
-  var lenis = null;
 
   function $(s, root) { return (root || document).querySelector(s); }
   function $$(s, root) { return Array.prototype.slice.call((root || document).querySelectorAll(s)); }
@@ -53,21 +52,7 @@
   if (year) year.textContent = new Date().getFullYear();
 
   /* ------------------------------------------------------------------------
-     2. Défilement fluide (Lenis)
-     ------------------------------------------------------------------------ */
-  if (!reduced && window.Lenis) {
-    lenis = new window.Lenis({ lerp: 0.1, wheelMultiplier: 1 });
-    if (hasGSAP) {
-      lenis.on("scroll", window.ScrollTrigger.update);
-      window.gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-      window.gsap.ticker.lagSmoothing(0);
-    } else {
-      (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(performance.now());
-    }
-  }
-
-  /* ------------------------------------------------------------------------
-     3. En-tête, menu mobile, bouton fixe
+     2. En-tête, menu mobile, bouton fixe
      ------------------------------------------------------------------------ */
   var header = $("[data-header]");
   var toggle = $("[data-menu-toggle]");
@@ -85,8 +70,7 @@
     }
     lastY = y;
   }
-  if (lenis) lenis.on("scroll", function (e) { onScroll(e.scroll); });
-  else {
+  {
     var ticking = false;
     window.addEventListener("scroll", function () {
       if (ticking) return;
@@ -103,7 +87,6 @@
     toggle.setAttribute("aria-expanded", String(open));
     toggle.querySelector(".menu-toggle__label").textContent = open ? "Fermer" : "Menu";
     document.body.style.overflow = open ? "hidden" : "";
-    if (lenis) { if (open) lenis.stop(); else lenis.start(); }
     header.classList.remove("is-hidden");
     updateMobileCta();
     if (open && hasGSAP && !reduced) {
@@ -145,8 +128,7 @@
     if (!target) return;
     e.preventDefault();
     setMenu(false);
-    if (lenis) lenis.scrollTo(id === "#top" ? 0 : target, { duration: 1.4 });
-    else target.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+    target.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
     if (history.replaceState) history.replaceState(null, "", id === "#top" ? location.pathname : id);
     if (id !== "#top") {
       target.setAttribute("tabindex", "-1");

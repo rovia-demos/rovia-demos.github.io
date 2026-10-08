@@ -1,0 +1,17 @@
+# Azur Piscines
+
+> Pisciniste à Hyères : construction de piscines béton et coque, rénovation, équipements et entretien. Devis gratuit.
+
+## Pages
+
+- [Accueil](./) : services, réalisations, méthode, questions fréquentes et formulaire de devis gratuit.
+- [Mentions légales](mentions-legales.html)
+- [Politique de confidentialité](confidentialite.html)
+
+## Contact
+
+- Téléphone : 01 23 45 67 89
+- E-mail : contact@exemple.fr
+- Adresse : Hyères (83)
+- Zone d'intervention : Hyères, Toulon, La Londe-les-Maures, Le Lavandou, Bormes-les-Mimosas, Carqueiranne
+- Horaires : Lun à sam, 8 h à 18 h

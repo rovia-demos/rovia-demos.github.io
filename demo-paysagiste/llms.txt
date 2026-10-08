@@ -1,0 +1,17 @@
+# Dumas Paysages
+
+> Paysagiste à Lyon : création de jardins, terrasses, arrosage automatique et entretien. Devis gratuit sous 48 h.
+
+## Pages
+
+- [Accueil](./) : services, réalisations, méthode, questions fréquentes et formulaire de devis gratuit.
+- [Mentions légales](mentions-legales.html)
+- [Politique de confidentialité](confidentialite.html)
+
+## Contact
+
+- Téléphone : 01 23 45 67 89
+- E-mail : contact@exemple.fr
+- Adresse : Lyon (69)
+- Zone d'intervention : Lyon, Villeurbanne, Caluire-et-Cuire, Écully, Tassin-la-Demi-Lune, Bron, Vénissieux
+- Horaires : Lun à ven, 8 h à 18 h

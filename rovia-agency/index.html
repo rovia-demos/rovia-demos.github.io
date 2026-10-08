@@ -16,16 +16,21 @@
   <meta property="og:description" content="Des sites modernes pour les artisans et entreprises locales. Maquette gratuite sous 48 h, sans engagement.">
   <meta property="og:url" content="https://roviaagency.com/">
   <meta property="og:image" content="https://roviaagency.com/assets/img/og-rovia.jpg">
+  <meta property="og:image:alt" content="Rovia, sites web pour artisans et entreprises locales">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rovia | Votre entreprise mérite mieux qu’un site de 2012">
+  <meta name="twitter:description" content="Des sites modernes pour les artisans et entreprises locales. Maquette gratuite sous 48 h, sans engagement.">
+  <meta name="twitter:image" content="https://roviaagency.com/assets/img/og-rovia.jpg">
 
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Instrument+Sans:wght@400..600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -35,16 +40,97 @@
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Rovia",
-    "url": "https://roviaagency.com/",
-    "email": "flavio@roviaagency.com",
-    "description": "Création de sites web pour les artisans et entreprises locales.",
-    "areaServed": { "@type": "Country", "name": "France" },
-    "logo": "https://roviaagency.com/assets/img/icon-512.png"
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://roviaagency.com/#entreprise",
+      "name": "Rovia",
+      "alternateName": "Rovia Agency",
+      "url": "https://roviaagency.com/",
+      "email": "flavio@roviaagency.com",
+      "description": "Création de sites web pour les artisans et entreprises locales : maquette gratuite sous 48 h, site en ligne en 7 jours.",
+      "logo": "https://roviaagency.com/assets/img/icon-512.png",
+      "image": "https://roviaagency.com/assets/img/og-rovia.jpg",
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "knowsLanguage": "fr",
+      "priceRange": "€€"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://roviaagency.com/#site",
+      "url": "https://roviaagency.com/",
+      "name": "Rovia",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://roviaagency.com/#entreprise"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://roviaagency.com/#page",
+      "url": "https://roviaagency.com/",
+      "name": "Rovia | Sites web pour artisans et entreprises locales",
+      "isPartOf": {
+        "@id": "https://roviaagency.com/#site"
+      },
+      "about": {
+        "@id": "https://roviaagency.com/#entreprise"
+      },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://roviaagency.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien de temps pour avoir mon site ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La maquette est prête sous 48 h. Une fois validée, votre site est en ligne en 7 jours environ. Le plus long, souvent, c’est de réunir vos photos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu’est-ce que je dois fournir ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le nom de votre entreprise, vos services, votre zone d’intervention et quelques photos de chantiers. Celles de votre téléphone suffisent. On s’occupe des textes, de la mise en page et de la mise en ligne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que je pourrai modifier mon site ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Un nouveau chantier à montrer, un prix ou des horaires à changer : envoyez-nous un message, on s’en occupe. Votre site évolue avec votre entreprise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment se passe le paiement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La maquette ne vous coûte rien. Si vous décidez d’aller plus loin, vous recevez un devis clair. Un acompte au lancement, le solde à la mise en ligne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Et si la maquette ne me plaît pas ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous ne devez rien. On peut l’ajuster selon vos retours, ou en rester là. C’est sans engagement."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -220,7 +306,7 @@
               <div class="ba-canvas" data-vw="1280" data-vw-phone="auto">
                 <div class="nw">
                   <div class="nw__hero">
-                    <img class="nw__img" src="assets/img/slider/1633109741715-59b57495bbdc.jpg" srcset="assets/img/slider/1633109741715-59b57495bbdc.jpg 800w, assets/img/slider/1633109741715-59b57495bbdc.jpg 1600w" sizes="(max-width: 640px) 400px, 1100px" alt="" loading="lazy" decoding="async">
+                    <img class="nw__img" src="assets/img/slider/jardin-moderne-800.webp" srcset="assets/img/slider/jardin-moderne-800.webp 800w, assets/img/slider/jardin-moderne-1600.webp 1600w" width="1600" height="900" sizes="(max-width: 640px) 400px, 1100px" alt="" loading="lazy" decoding="async">
                     <div class="nw__bar">
                       <p class="nw__logo">Dumas<span>Paysages</span></p>
                       <p class="nw__links"><span>Réalisations</span><span>Services</span><span>L’entreprise</span><span>Contact</span></p>
@@ -235,7 +321,7 @@
                       <p class="nw__btns"><span class="nw__btn">Demander un devis</span><span class="nw__btn nw__btn--line">Voir nos jardins</span></p>
                     </div>
                     <div class="nw__card">
-                      <img src="assets/img/slider/1643063231577-959abf98b59c.jpg" alt="" width="120" height="80" loading="lazy" decoding="async">
+                      <img src="assets/img/slider/terrasse-pergola.webp" alt="" width="120" height="80" loading="lazy" decoding="async">
                       <p><b>Chantier récent</b>Terrasse bois et pergola, Écully</p>
                     </div>
                   </div>
@@ -583,7 +669,7 @@
             <input type="hidden" name="access_key" value="" data-form-key>
             <input type="hidden" name="subject" value="Nouvelle demande de maquette (roviaagency.com)">
             <input type="hidden" name="from_name" value="Site Rovia">
-            <input type="hidden" name="redirect" value="https://roviaagency.com/merci.html">
+            <input type="hidden" name="redirect" value="https://roviaagency.com/merci">
             <input type="checkbox" name="botcheck" class="form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div class="form__grid">
@@ -635,7 +721,7 @@
               <span class="btn__label" data-text="Recevoir ma maquette gratuite">Recevoir ma maquette gratuite</span>
               <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
-            <p class="form__legal">En envoyant ce formulaire, vous acceptez que Rovia utilise ces informations pour vous recontacter, et rien d’autre. <a href="mentions-legales.html#donnees">En savoir plus</a>.</p>
+            <p class="form__legal">En envoyant ce formulaire, vous acceptez que Rovia utilise ces informations pour vous recontacter, et rien d’autre. <a href="confidentialite">En savoir plus</a>.</p>
             <p class="form__status" role="status" aria-live="polite" data-form-status></p>
           </form>
 
@@ -668,7 +754,8 @@
           <ul>
             <li><a href="#contact">Maquette gratuite</a></li>
             <li><a href="mailto:flavio@roviaagency.com" data-rovia-email>flavio@roviaagency.com</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="mentions-legales">Mentions légales</a></li>
+            <li><a href="confidentialite">Confidentialité</a></li>
           </ul>
         </nav>
       </div>
@@ -689,9 +776,8 @@
   </a>
 
   <script src="assets/js/config.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" defer></script>
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/js/hero-trail.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>

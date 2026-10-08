@@ -1,0 +1,17 @@
+# Atelier Ferrand
+
+> Rénovation à Bordeaux : cuisine, salle de bain, rénovation complète d'appartement et de maison. Devis gratuit sous 48 h.
+
+## Pages
+
+- [Accueil](./) : services, réalisations, méthode, questions fréquentes et formulaire de devis gratuit.
+- [Mentions légales](mentions-legales.html)
+- [Politique de confidentialité](confidentialite.html)
+
+## Contact
+
+- Téléphone : 01 23 45 67 89
+- E-mail : contact@exemple.fr
+- Adresse : Bordeaux (33)
+- Zone d'intervention : Bordeaux, Mérignac, Pessac, Talence, Bègles, Le Bouscat
+- Horaires : Lun à ven, 8 h à 18 h

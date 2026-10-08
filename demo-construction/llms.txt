@@ -1,0 +1,17 @@
+# Bâti Sud
+
+> Construction à Aix-en-Provence : maisons individuelles, extensions, surélévations et gros œuvre. Devis gratuit.
+
+## Pages
+
+- [Accueil](./) : services, réalisations, méthode, questions fréquentes et formulaire de devis gratuit.
+- [Mentions légales](mentions-legales.html)
+- [Politique de confidentialité](confidentialite.html)
+
+## Contact
+
+- Téléphone : 01 23 45 67 89
+- E-mail : contact@exemple.fr
+- Adresse : Aix-en-Provence (13)
+- Zone d'intervention : Aix-en-Provence, Marseille, Pertuis, Gardanne, Vitrolles, Trets
+- Horaires : Lun à ven, 7 h 30 à 17 h 30

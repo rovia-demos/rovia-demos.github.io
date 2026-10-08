@@ -1,0 +1,17 @@
+# Toitures Garnier
+
+> Couvreur à Toulouse : réfection de toiture, recherche de fuite, zinguerie, charpente et urgences. Devis gratuit sous 48 h.
+
+## Pages
+
+- [Accueil](./) : services, réalisations, méthode, questions fréquentes et formulaire de devis gratuit.
+- [Mentions légales](mentions-legales.html)
+- [Politique de confidentialité](confidentialite.html)
+
+## Contact
+
+- Téléphone : 01 23 45 67 89
+- E-mail : contact@exemple.fr
+- Adresse : Toulouse (31)
+- Zone d'intervention : Toulouse, Blagnac, Colomiers, Tournefeuille, Balma, L'Union, Muret
+- Horaires : Lun à sam, 7 h 30 à 19 h

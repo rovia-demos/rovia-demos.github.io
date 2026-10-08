@@ -46,11 +46,6 @@
     hideOn.forEach((el) => io.observe(el));
   }
 
-  // Mentions légales
-  const dlg = document.getElementById("legal");
-  document.querySelectorAll("[data-legal]").forEach((b) => b.addEventListener("click", () => dlg.showModal()));
-  dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.hasAttribute("data-close")) dlg.close(); });
-
   // Vidéo : pas de lecture si mouvement réduit ou économie de données
   const video = hero && hero.querySelector("video");
   if (video && (matchMedia("(prefers-reduced-motion: reduce)").matches || (navigator.connection && navigator.connection.saveData))) {
