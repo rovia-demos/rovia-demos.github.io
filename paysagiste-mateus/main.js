@@ -25,6 +25,21 @@
   mnav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
   addEventListener("keydown", (e) => { if (e.key === "Escape" && mnav.classList.contains("open")) setMenu(false); });
 
+  // Sur téléphone, le formulaire quitte le premier écran et passe en fin de page :
+  // le bouton « Demander un devis » y mène directement.
+  const devis = document.getElementById("devis");
+  const fin = document.querySelector(".devis-fin");
+  if (devis && fin) {
+    const home = devis.parentNode;
+    const mq = matchMedia("(max-width: 700px)");
+    const place = () => {
+      if (mq.matches) { fin.firstElementChild.appendChild(devis); fin.hidden = false; }
+      else { home.appendChild(devis); fin.hidden = true; }
+    };
+    place();
+    mq.addEventListener ? mq.addEventListener("change", place) : mq.addListener(place);
+  }
+
   // Formulaire : en démo, confirmation sans envoi. Sinon, envoi natif (Netlify Forms).
   const form = document.querySelector("form[name^=devis]");
   if (form && document.body.dataset.demo === "1") {
