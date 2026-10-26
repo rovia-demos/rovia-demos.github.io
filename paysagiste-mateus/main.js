@@ -36,7 +36,8 @@
 
   // Barre d'appel mobile : masquée tant que le formulaire ou le pied de page est visible
   const sticky = document.querySelector(".sticky");
-  const hideOn = [document.getElementById("devis"), document.querySelector(".ft")].filter(Boolean);
+  // ... et sur le premier écran, qui a déjà ses boutons
+  const hideOn = [document.querySelector(".hero .txt"), document.getElementById("devis"), document.querySelector(".ft")].filter(Boolean);
   if (sticky && "IntersectionObserver" in window) {
     const seen = new Set();
     const io = new IntersectionObserver((entries) => {
