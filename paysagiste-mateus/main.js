@@ -53,6 +53,36 @@
     video.pause();
   }
 
+  // Avant / après : on fait glisser la séparation (doigt, souris ou clavier)
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".ba-box").forEach((box) => {
+    const range = box.querySelector("input");
+    const set = (v) => { v = Math.max(0, Math.min(100, v)); box.style.setProperty("--pos", v + "%"); range.value = v; };
+    const fromX = (x) => { const r = box.getBoundingClientRect(); set(((x - r.left) / r.width) * 100); };
+    let drag = false;
+    box.addEventListener("pointerdown", (e) => { drag = true; box.setPointerCapture(e.pointerId); fromX(e.clientX); });
+    box.addEventListener("pointermove", (e) => { if (drag) fromX(e.clientX); });
+    box.addEventListener("pointerup", () => (drag = false));
+    box.addEventListener("pointercancel", () => (drag = false));
+    range.addEventListener("input", () => set(+range.value));
+    // Petit balayage à la première apparition, pour montrer que ça se déplace
+    if (!reduce && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(([x]) => {
+        if (!x.isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now();
+        const step = (t) => {
+          if (drag) return;
+          const k = Math.min(1, (t - t0) / 1600);
+          set(50 + 30 * Math.sin(k * Math.PI * 2) * (1 - k));
+          if (k < 1) requestAnimationFrame(step);
+        };
+        setTimeout(() => requestAnimationFrame(step), 500);
+      }, { threshold: 0.6 });
+      io.observe(box);
+    }
+  });
+
   // Apparition au défilement, avec filet de sécurité pour que rien ne reste invisible
   const els = [...document.querySelectorAll(".rv")];
   if ("IntersectionObserver" in window) {
