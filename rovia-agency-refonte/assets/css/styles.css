@@ -571,7 +571,7 @@ section[id] { scroll-margin-top: var(--header-h); }
   border: 2px dashed rgba(255, 255, 255, .35); color: rgba(255, 255, 255, .8); font-weight: 700; letter-spacing: .04em; font-size: .78rem;
   background: radial-gradient(circle at 30% 30%, rgba(92, 194, 240, .35), transparent 60%), var(--navy-2);
 }
-.about__photo img { width: clamp(160px, 20vw, 240px); aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.about__photo img { width: clamp(160px, 20vw, 240px); aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 4px var(--navy), 0 0 0 6px rgba(92, 194, 240, .55); }
 .about__text { display: grid; gap: 14px; color: rgba(255, 255, 255, .8); max-width: 56ch; }
 .about__name { font-weight: 700; letter-spacing: -.04em; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.05; color: #fff; }
 .about__name span { display: block; margin-top: 6px; font-size: 1rem; letter-spacing: 0; font-weight: 500; color: var(--sky); }
