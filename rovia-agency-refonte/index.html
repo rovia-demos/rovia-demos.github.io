@@ -30,7 +30,6 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script>
@@ -122,7 +121,7 @@
 
   <!-- En-tête -->
   <header class="site-header" data-header>
-    <div class="wrap site-header__inner">
+    <div class="site-header__pill">
       <a class="brand" href="#top" aria-label="Rovia, retour en haut de page">
         <img src="assets/img/rovia-logo-dark.png" alt="Rovia Agency" width="245" height="96">
       </a>
@@ -135,7 +134,7 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
-      <a class="btn btn--primary btn--sm header-cta" href="#contact">Maquette gratuite</a>
+      <a class="btn btn--dark btn--sm header-cta" href="#contact">Maquette gratuite</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" data-menu-toggle>
         <span class="menu-toggle__label">Menu</span>
         <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i></span>
@@ -164,31 +163,53 @@
 
     <!-- Hero -->
     <section class="hero" id="top" data-hero>
-      <div class="wrap hero__inner">
-        <div class="hero__text">
-          <p class="hero__kicker" data-reveal>Sites internet pour artisans, partout en France</p>
-          <h1 class="hero__title" data-reveal>Un site aussi soigné que <em>vos chantiers.</em></h1>
-          <p class="hero__lead" data-reveal>Je crée le site de votre entreprise. Avant tout engagement, je vous prépare la maquette du vôtre, gratuitement.</p>
-          <div class="hero__actions" data-reveal data-hero-actions>
+      <div class="hero__panel">
+        <div class="hero__sky" aria-hidden="true"></div>
+        <div class="wrap hero__inner">
+          <p class="hero__badge" data-hero-in><span class="dot" aria-hidden="true"></span>Maquette offerte, avant tout engagement</p>
+          <h1 class="hero__title">
+            <span class="line" data-hero-in>Un site aussi soigné</span>
+            <span class="line line--accent" data-hero-in>que vos chantiers.</span>
+          </h1>
+          <p class="hero__lead" data-hero-in>Je crée le site internet des artisans, partout en France. Avant de vous engager, vous voyez la maquette du vôtre. Gratuitement.</p>
+          <div class="hero__actions" data-hero-in data-hero-actions>
             <a class="btn btn--primary btn--lg" href="#contact">
               Recevoir ma maquette gratuite
               <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn--ghost btn--lg" href="#realisations">Voir mes réalisations</a>
+            <a class="btn btn--glass btn--lg" href="#realisations">Voir mes réalisations</a>
           </div>
         </div>
 
-        <div class="hero__visual" data-reveal>
-          <figure class="device device--hero">
-            <div class="device__screen">
-              <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-              <img src="assets/img/realisations/maconnerie-ordinateur.webp" alt="Page d’accueil du site de LG Maçonnerie, maçon dans le Luberon, sur ordinateur" width="1200" height="750" fetchpriority="high">
+        <div class="hero__stage" data-hero-in>
+          <div class="stage">
+            <figure class="stage__laptop">
+              <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i><b>as-menuiserie</b></span>
+              <img src="assets/img/realisations/menuiserie-ordinateur.webp" alt="Maquette du site d’AS Menuiserie, menuisier dans les Pyrénées-Orientales, sur ordinateur" width="1200" height="750" fetchpriority="high">
+            </figure>
+            <figure class="stage__phone stage__phone--left">
+              <img src="assets/img/realisations/maconnerie-mobile.webp" alt="Maquette du site de LG Maçonnerie sur téléphone" width="390" height="844">
+            </figure>
+            <figure class="stage__phone stage__phone--right">
+              <img src="assets/img/realisations/batirenov-mobile.webp" alt="Maquette du site de Bâtirénov sur téléphone" width="390" height="844">
+            </figure>
+
+            <!-- Exemples de notifications : illustration de ce que reçoit un artisan, pas des chiffres réels -->
+            <div class="toasts" aria-hidden="true" data-toasts>
+              <div class="toast is-active">
+                <span class="toast__icon toast__icon--blue"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg></span>
+                <span><b>Nouvelle demande de devis</b>Rénovation salle de bain</span>
+              </div>
+              <div class="toast">
+                <span class="toast__icon toast__icon--sun"><svg viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2"/></svg></span>
+                <span><b>Appel depuis votre site</b>Bouton « Appeler » sur téléphone</span>
+              </div>
+              <div class="toast">
+                <span class="toast__icon toast__icon--green"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                <span><b>Nouvelle demande de devis</b>Clôture et portail alu</span>
+              </div>
             </div>
-            <div class="device__phone">
-              <img src="assets/img/realisations/maconnerie-mobile.webp" alt="Le même site sur téléphone" width="390" height="844">
-            </div>
-            <figcaption class="device__caption">Maquette réalisée pour LG Maçonnerie, dans le Luberon</figcaption>
-          </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -197,10 +218,10 @@
     <div class="trades" aria-label="Métiers que j’accompagne">
       <div class="trades__track">
         <ul class="trades__list">
-          <li>Menuisiers</li><li>Maçons</li><li>Paysagistes</li><li>Terrassiers</li><li>Couvreurs</li><li>Rénovation</li><li>Plombiers</li><li>Électriciens</li><li>Piscinistes</li><li>Commerces et restaurants</li>
+          <li>Menuisiers</li><li>Maçons</li><li>Paysagistes</li><li>Couvreurs</li><li>Rénovation</li><li>Plombiers</li><li>Électriciens</li><li>Terrassiers</li><li>Piscinistes</li><li>Restaurants</li>
         </ul>
         <ul class="trades__list" aria-hidden="true">
-          <li>Menuisiers</li><li>Maçons</li><li>Paysagistes</li><li>Terrassiers</li><li>Couvreurs</li><li>Rénovation</li><li>Plombiers</li><li>Électriciens</li><li>Piscinistes</li><li>Commerces et restaurants</li>
+          <li>Menuisiers</li><li>Maçons</li><li>Paysagistes</li><li>Couvreurs</li><li>Rénovation</li><li>Plombiers</li><li>Électriciens</li><li>Terrassiers</li><li>Piscinistes</li><li>Restaurants</li>
         </ul>
       </div>
     </div>
@@ -209,108 +230,82 @@
     <section class="section works" id="realisations" aria-labelledby="works-title">
       <div class="wrap">
         <header class="section-head">
-          <h2 class="h2" id="works-title" data-reveal>Des sites faits pour de <em>vrais métiers.</em></h2>
+          <h2 class="h2" id="works-title" data-reveal>Des sites faits pour <span class="accent">de vrais métiers.</span></h2>
           <p class="lead" data-reveal>Un client en ligne, et des maquettes que j’ai préparées pour des artisans avant notre premier rendez-vous.</p>
         </header>
 
+        <article class="work-feature" data-reveal>
+          <div class="work-feature__text">
+            <span class="tag tag--sun">Client</span>
+            <h3 class="work-feature__title">Les Burgers de Brice</h3>
+            <p class="work-feature__meta">Food truck à Perpignan. Site en ligne, avec la carte, les horaires et la commande.</p>
+            <a class="btn btn--light" href="https://lesburgersdebrice.com/" target="_blank" rel="noopener">Voir le site en ligne<span class="sr-only"> (nouvel onglet)</span>
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+          <a class="work-feature__visual" href="https://lesburgersdebrice.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="frame">
+              <span class="device__bar"><i></i><i></i><i></i><b>lesburgersdebrice.com</b></span>
+              <img src="assets/img/realisations/brice-ordinateur.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+            </span>
+            <span class="frame-phone"><img src="assets/img/realisations/brice-mobile.webp" alt="" width="390" height="844" loading="lazy" decoding="async"></span>
+          </a>
+        </article>
+
         <div class="works__grid">
-          <article class="work work--feature" data-reveal>
-            <a class="work__frame" href="https://lesburgersdebrice.com/" target="_blank" rel="noopener" aria-label="Voir le site des Burgers de Brice (nouvel onglet)">
-              <span class="device">
-                <span class="device__screen">
-                  <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="assets/img/realisations/brice-ordinateur.webp" alt="Site des Burgers de Brice sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
-                </span>
-                <span class="device__phone">
-                  <img src="assets/img/realisations/brice-mobile.webp" alt="Site des Burgers de Brice sur téléphone" width="390" height="844" loading="lazy" decoding="async">
-                </span>
+          <article class="work" data-reveal>
+            <a class="work__visual" href="https://rovia-demos.github.io/as-menuiserie/" target="_blank" rel="noopener" aria-label="Voir la maquette d’AS Menuiserie (nouvel onglet)">
+              <span class="frame">
+                <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <img src="assets/img/realisations/menuiserie-ordinateur.webp" alt="Maquette du site d’AS Menuiserie sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
               </span>
+              <span class="frame-phone"><img src="assets/img/realisations/menuiserie-mobile.webp" alt="La même maquette sur téléphone" width="390" height="844" loading="lazy" decoding="async"></span>
             </a>
             <div class="work__info">
-              <span class="tag tag--client">Client</span>
-              <h3 class="work__title">Les Burgers de Brice</h3>
-              <p class="work__meta">Food truck à Perpignan</p>
-              <a class="work__link" href="https://lesburgersdebrice.com/" target="_blank" rel="noopener">Voir le site en ligne<span class="sr-only"> (nouvel onglet)</span></a>
+              <div><h3 class="work__title">AS Menuiserie</h3><p class="work__meta">Menuisier, Pyrénées-Orientales</p></div>
+              <span class="tag">Maquette</span>
             </div>
           </article>
 
           <article class="work" data-reveal>
-            <a class="work__frame" href="https://rovia-demos.github.io/as-menuiserie/" target="_blank" rel="noopener" aria-label="Voir la maquette d’AS Menuiserie (nouvel onglet)">
-              <span class="device">
-                <span class="device__screen">
-                  <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="assets/img/realisations/menuiserie-ordinateur.webp" alt="Maquette du site d’AS Menuiserie sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
-                </span>
-                <span class="device__phone">
-                  <img src="assets/img/realisations/menuiserie-mobile.webp" alt="Maquette du site d’AS Menuiserie sur téléphone" width="390" height="844" loading="lazy" decoding="async">
-                </span>
+            <a class="work__visual" href="https://rovia-demos.github.io/lg-maconnerie/" target="_blank" rel="noopener" aria-label="Voir la maquette de LG Maçonnerie (nouvel onglet)">
+              <span class="frame">
+                <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <img src="assets/img/realisations/maconnerie-ordinateur.webp" alt="Maquette du site de LG Maçonnerie sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
               </span>
+              <span class="frame-phone"><img src="assets/img/realisations/maconnerie-mobile.webp" alt="La même maquette sur téléphone" width="390" height="844" loading="lazy" decoding="async"></span>
             </a>
             <div class="work__info">
+              <div><h3 class="work__title">LG Maçonnerie</h3><p class="work__meta">Maçon, Luberon</p></div>
               <span class="tag">Maquette</span>
-              <h3 class="work__title">AS Menuiserie</h3>
-              <p class="work__meta">Menuisier, Pyrénées-Orientales</p>
-              <a class="work__link" href="https://rovia-demos.github.io/as-menuiserie/" target="_blank" rel="noopener">Voir la maquette<span class="sr-only"> (nouvel onglet)</span></a>
             </div>
           </article>
 
           <article class="work" data-reveal>
-            <a class="work__frame" href="https://rovia-demos.github.io/vp-terrassement/" target="_blank" rel="noopener" aria-label="Voir la maquette de V&amp;P Terrassement (nouvel onglet)">
-              <span class="device">
-                <span class="device__screen">
-                  <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="assets/img/realisations/terrassement-ordinateur.webp" alt="Maquette du site de V&amp;P Terrassement sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
-                </span>
-                <span class="device__phone">
-                  <img src="assets/img/realisations/terrassement-mobile.webp" alt="Maquette du site de V&amp;P Terrassement sur téléphone" width="390" height="844" loading="lazy" decoding="async">
-                </span>
+            <a class="work__visual" href="https://rovia-demos.github.io/batirenov/" target="_blank" rel="noopener" aria-label="Voir la maquette de Bâtirénov (nouvel onglet)">
+              <span class="frame">
+                <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <img src="assets/img/realisations/batirenov-ordinateur.webp" alt="Maquette du site de Bâtirénov sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
               </span>
+              <span class="frame-phone"><img src="assets/img/realisations/batirenov-mobile.webp" alt="La même maquette sur téléphone" width="390" height="844" loading="lazy" decoding="async"></span>
             </a>
             <div class="work__info">
+              <div><h3 class="work__title">Bâtirénov</h3><p class="work__meta">Rénovation de l’habitat</p></div>
               <span class="tag">Maquette</span>
-              <h3 class="work__title">V&amp;P Terrassement</h3>
-              <p class="work__meta">Terrassement, Marseille</p>
-              <a class="work__link" href="https://rovia-demos.github.io/vp-terrassement/" target="_blank" rel="noopener">Voir la maquette<span class="sr-only"> (nouvel onglet)</span></a>
             </div>
           </article>
 
           <article class="work" data-reveal>
-            <a class="work__frame" href="https://rovia-demos.github.io/batirenov/" target="_blank" rel="noopener" aria-label="Voir la maquette de Bâtirénov (nouvel onglet)">
-              <span class="device">
-                <span class="device__screen">
-                  <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="assets/img/realisations/batirenov-ordinateur.webp" alt="Maquette du site de Bâtirénov sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
-                </span>
-                <span class="device__phone">
-                  <img src="assets/img/realisations/batirenov-mobile.webp" alt="Maquette du site de Bâtirénov sur téléphone" width="390" height="844" loading="lazy" decoding="async">
-                </span>
+            <a class="work__visual" href="https://rovia-demos.github.io/paysagiste-mateus/" target="_blank" rel="noopener" aria-label="Voir la maquette de Paysagiste Mateus (nouvel onglet)">
+              <span class="frame">
+                <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                <img src="assets/img/realisations/paysagiste-ordinateur.webp" alt="Maquette du site de Paysagiste Mateus sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
               </span>
+              <span class="frame-phone"><img src="assets/img/realisations/paysagiste-mobile.webp" alt="La même maquette sur téléphone" width="390" height="844" loading="lazy" decoding="async"></span>
             </a>
             <div class="work__info">
+              <div><h3 class="work__title">Paysagiste Mateus</h3><p class="work__meta">Création et entretien de jardins</p></div>
               <span class="tag">Maquette</span>
-              <h3 class="work__title">Bâtirénov</h3>
-              <p class="work__meta">Rénovation de l’habitat</p>
-              <a class="work__link" href="https://rovia-demos.github.io/batirenov/" target="_blank" rel="noopener">Voir la maquette<span class="sr-only"> (nouvel onglet)</span></a>
-            </div>
-          </article>
-
-          <article class="work" data-reveal>
-            <a class="work__frame" href="https://rovia-demos.github.io/paysagiste-mateus/" target="_blank" rel="noopener" aria-label="Voir la maquette de Paysagiste Mateus (nouvel onglet)">
-              <span class="device">
-                <span class="device__screen">
-                  <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img src="assets/img/realisations/paysagiste-ordinateur.webp" alt="Maquette du site de Paysagiste Mateus sur ordinateur" width="1200" height="750" loading="lazy" decoding="async">
-                </span>
-                <span class="device__phone">
-                  <img src="assets/img/realisations/paysagiste-mobile.webp" alt="Maquette du site de Paysagiste Mateus sur téléphone" width="390" height="844" loading="lazy" decoding="async">
-                </span>
-              </span>
-            </a>
-            <div class="work__info">
-              <span class="tag">Maquette</span>
-              <h3 class="work__title">Paysagiste Mateus</h3>
-              <p class="work__meta">Paysagiste, entretien et création de jardins</p>
-              <a class="work__link" href="https://rovia-demos.github.io/paysagiste-mateus/" target="_blank" rel="noopener">Voir la maquette<span class="sr-only"> (nouvel onglet)</span></a>
             </div>
           </article>
         </div>
@@ -319,85 +314,136 @@
 
     <!-- Ce que votre site fait pour vous -->
     <section class="section jobs" id="pour-vous" aria-labelledby="jobs-title">
-      <div class="wrap jobs__inner">
-        <h2 class="h2 jobs__title" id="jobs-title" data-reveal>Ce que votre site fait pour vous, <em>même quand vous êtes sur le chantier.</em></h2>
-        <ol class="jobs__list">
-          <li class="job" data-reveal>
-            <span class="job__num" aria-hidden="true">1</span>
-            <div>
-              <h3 class="job__title">On vous trouve sur Google.</h3>
-              <p>Votre site parle de votre métier et de votre ville, comme vos clients les tapent dans Google. Votre fiche Google est remplie et reliée à votre site.</p>
-            </div>
-          </li>
-          <li class="job" data-reveal>
-            <span class="job__num" aria-hidden="true">2</span>
-            <div>
-              <h3 class="job__title">Il rassure avant le premier appel.</h3>
-              <p>Vos réalisations, vos avis, votre zone d’intervention : le client sait à qui il a affaire avant même de décrocher son téléphone.</p>
-            </div>
-          </li>
-          <li class="job" data-reveal>
-            <span class="job__num" aria-hidden="true">3</span>
-            <div>
-              <h3 class="job__title">Il reçoit les demandes de devis, déjà triées.</h3>
-              <p>Le formulaire demande le type de travaux, la ville et les coordonnées. Vous recevez par mail une demande claire, prête à rappeler.</p>
-            </div>
-          </li>
-        </ol>
+      <div class="wrap">
+        <div class="panel panel--dark jobs__panel" data-reveal>
+          <div class="jobs__text">
+            <h2 class="h2" id="jobs-title">Ce que votre site fait <span class="accent">pendant que vous êtes sur le chantier.</span></h2>
+            <ol class="jobs__list" data-jobs>
+              <li><button type="button" class="job is-active" data-job="0" aria-pressed="true">
+                <span class="job__title">On vous trouve sur Google</span>
+                <span class="job__text">Votre site parle de votre métier et de votre ville, comme vos clients les tapent dans Google. Votre fiche Google est remplie et reliée à votre site.</span>
+              </button></li>
+              <li><button type="button" class="job" data-job="1" aria-pressed="false">
+                <span class="job__title">Il rassure avant le premier appel</span>
+                <span class="job__text">Vos réalisations, vos avis, votre zone d’intervention : le client sait à qui il a affaire avant de décrocher son téléphone.</span>
+              </button></li>
+              <li><button type="button" class="job" data-job="2" aria-pressed="false">
+                <span class="job__title">Il reçoit les demandes de devis, déjà triées</span>
+                <span class="job__text">Le formulaire demande le type de travaux, la ville et les coordonnées. Vous recevez par mail une demande claire, prête à rappeler.</span>
+              </button></li>
+            </ol>
+          </div>
+
+          <!-- Illustration animée : parcours type d'un client (exemple) -->
+          <div class="journey" aria-hidden="true" data-journey>
+            <p class="journey__head"><span class="dot"></span>Un client cherche un artisan</p>
+            <ol class="journey__steps">
+              <li data-step="0"><time>08:41</time><b>Tape « menuisier Perpignan »</b><span>et tombe sur votre site</span></li>
+              <li data-step="0"><time>08:42</time><b>Comprend ce que vous faites</b><span>en quelques secondes</span></li>
+              <li data-step="1"><time>08:43</time><b>Regarde vos chantiers</b><span>et lit vos avis</span></li>
+              <li data-step="1"><time>08:45</time><b>Voit que vous venez chez lui</b><span>zone d’intervention</span></li>
+              <li data-step="2"><time>08:46</time><b>Remplit votre formulaire</b><span>baie vitrée, Canet-en-Roussillon</span></li>
+            </ol>
+            <p class="journey__done" data-step="2"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Demande de devis reçue dans votre boîte mail</p>
+            <p class="journey__note">Exemple de parcours</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Méthode -->
     <section class="section steps" id="methode" aria-labelledby="steps-title">
       <div class="wrap">
-        <header class="section-head">
-          <h2 class="h2" id="steps-title" data-reveal>De la maquette à votre site en ligne, <em>quatre étapes.</em></h2>
+        <header class="section-head section-head--center">
+          <h2 class="h2" id="steps-title" data-reveal>De la maquette à votre site en ligne, <span class="accent">quatre étapes.</span></h2>
           <p class="lead" data-reveal>Vous ne payez rien tant que vous n’avez pas vu votre maquette.</p>
         </header>
 
         <ol class="steps__list">
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">01</span>
-            <div class="step__body">
+          <li class="step" data-step-card>
+            <div class="step__text">
+              <span class="step__num">01</span>
               <h3 class="step__title">Votre maquette, offerte</h3>
-              <p class="step__text">Je vous prépare une maquette gratuite de votre site, avant tout engagement.</p>
-              <dl class="step__roles">
+              <p class="step__lead">Je vous prépare une maquette gratuite de votre site, avant tout engagement.</p>
+              <dl class="roles">
                 <div><dt>Vous</dt><dd>Vous me donnez quelques infos sur votre entreprise.</dd></div>
                 <div><dt>Moi</dt><dd>Je dessine votre site avec votre nom, vos services et vos avis.</dd></div>
               </dl>
             </div>
+            <div class="step__visual" aria-hidden="true">
+              <div class="v-mock">
+                <span class="device__bar"><i></i><i></i><i></i><b>votre-entreprise.fr</b></span>
+                <img src="assets/img/realisations/menuiserie-ordinateur.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+                <span class="v-badge v-badge--sun">Maquette offerte · 0 €</span>
+              </div>
+            </div>
           </li>
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">02</span>
-            <div class="step__body">
+
+          <li class="step step--dark" data-step-card>
+            <div class="step__text">
+              <span class="step__num">02</span>
               <h3 class="step__title">La présentation en visio</h3>
-              <p class="step__text">Je vous la présente en visio, 10 à 20 minutes, même depuis le chantier.</p>
-              <dl class="step__roles">
+              <p class="step__lead">Je vous la présente en visio, 10 à 20 minutes, même depuis le chantier.</p>
+              <dl class="roles">
                 <div><dt>Vous</dt><dd>Vous me dites ce qui vous plaît et ce qu’il faut changer.</dd></div>
                 <div><dt>Moi</dt><dd>Je note tout.</dd></div>
               </dl>
             </div>
+            <div class="step__visual" aria-hidden="true">
+              <div class="v-call">
+                <p class="v-call__top"><span class="dot dot--red"></span>Visio · 10 à 20 min</p>
+                <div class="v-call__screen"><img src="assets/img/realisations/maconnerie-ordinateur.webp" alt="" width="1200" height="750" loading="lazy" decoding="async"></div>
+                <div class="v-call__tiles">
+                  <span class="v-tile"><i>F</i>Flavio</span>
+                  <span class="v-tile v-tile--you"><i>V</i>Vous, sur le chantier</span>
+                </div>
+                <p class="v-call__bubble">« Le titre me plaît, on change la photo ? »</p>
+              </div>
+            </div>
           </li>
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">03</span>
-            <div class="step__body">
+
+          <li class="step" data-step-card>
+            <div class="step__text">
+              <span class="step__num">03</span>
               <h3 class="step__title">La finition</h3>
-              <p class="step__text">Je finalise votre site avec vos vraies photos et vos retours, jusqu’à ce qu’il soit parfait à vos yeux.</p>
-              <dl class="step__roles">
+              <p class="step__lead">Je finalise votre site avec vos vraies photos et vos retours, jusqu’à ce qu’il soit parfait à vos yeux.</p>
+              <dl class="roles">
                 <div><dt>Vous</dt><dd>Vous m’envoyez vos photos et vous relisez.</dd></div>
                 <div><dt>Moi</dt><dd>J’ajuste jusqu’à ce que tout vous plaise.</dd></div>
               </dl>
             </div>
+            <div class="step__visual" aria-hidden="true">
+              <div class="v-mock v-mock--comments">
+                <span class="device__bar"><i></i><i></i><i></i><b>votre-entreprise.fr</b></span>
+                <img src="assets/img/realisations/batirenov-ordinateur.webp" alt="" width="1200" height="750" loading="lazy" decoding="async">
+                <span class="v-comment v-comment--1"><i>V</i>Une photo de la cuisine ici ?</span>
+                <span class="v-comment v-comment--2"><i>F</i>C’est fait <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+                <span class="v-badge v-badge--green">Validé, on met en ligne</span>
+              </div>
+            </div>
           </li>
-          <li class="step" data-reveal>
-            <span class="step__num" aria-hidden="true">04</span>
-            <div class="step__body">
+
+          <li class="step step--blue" data-step-card>
+            <div class="step__text">
+              <span class="step__num">04</span>
               <h3 class="step__title">En ligne, et suivi</h3>
-              <p class="step__text">Mise en ligne, référencement Google et fiche Google optimisée. Ensuite, un message suffit pour toute modification.</p>
-              <dl class="step__roles">
+              <p class="step__lead">Mise en ligne, référencement Google et fiche Google optimisée. Ensuite, un message suffit pour toute modification.</p>
+              <dl class="roles">
                 <div><dt>Vous</dt><dd>Vous m’écrivez quand vous voulez changer quelque chose.</dd></div>
                 <div><dt>Moi</dt><dd>Je mets votre site en ligne et je m’occupe des modifications.</dd></div>
               </dl>
+            </div>
+            <div class="step__visual" aria-hidden="true">
+              <div class="v-google">
+                <p class="v-google__bar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><span class="v-type">maçon Gordes</span></p>
+                <div class="v-google__result">
+                  <p class="v-google__url">votre-entreprise.fr › maçon-gordes</p>
+                  <p class="v-google__title">Maçon à Gordes et dans le Luberon · Devis gratuit</p>
+                  <p class="v-google__desc">Murs en pierre, terrasses, rénovation. Photos de chantiers, zone d’intervention et demande de devis en ligne.</p>
+                </div>
+                <div class="v-google__ghost"><i></i><i></i><i></i></div>
+                <span class="v-badge v-badge--sky">Votre site est en ligne</span>
+              </div>
             </div>
           </li>
         </ol>
@@ -406,38 +452,52 @@
 
     <!-- Tarifs -->
     <section class="section pricing" id="tarifs" aria-labelledby="pricing-title">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 class="h2" id="pricing-title" data-reveal>Un seul paiement, tout compris, <em>pas d’abonnement.</em></h2>
-        </header>
+      <div class="wrap pricing__inner">
+        <div class="pricing__intro">
+          <h2 class="h2" id="pricing-title" data-reveal>Un seul paiement. <span class="accent">Tout compris.</span></h2>
+          <p class="lead" data-reveal>Pas d’abonnement, pas de mauvaise surprise : le prix est annoncé dès le départ.</p>
+          <ul class="pricing__points">
+            <li data-reveal><span class="ico ico--sun" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></span><div><b>Maquette offerte</b>Vous voyez votre site avant de payer quoi que ce soit.</div></li>
+            <li data-reveal><span class="ico ico--blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></span><div><b>Paiement en deux fois</b>500&nbsp;€ au lancement, 500&nbsp;€ à la mise en ligne.</div></li>
+            <li data-reveal><span class="ico ico--green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Pas d’abonnement</b>Hébergement, maintenance et modifications compris.</div></li>
+          </ul>
+        </div>
 
-        <div class="pricing__grid">
+        <div class="pricing__cards">
           <article class="plan" data-reveal>
-            <h3 class="plan__name">Site internet tout compris</h3>
-            <p class="plan__price"><span class="plan__amount" data-rovia-price="prixSite">1&nbsp;000&nbsp;€</span> <span class="plan__unit">payé une seule fois</span></p>
-            <p class="plan__split">Ou en deux fois : 500&nbsp;€ au lancement, 500&nbsp;€ à la mise en ligne.</p>
+            <div class="plan__head">
+              <div>
+                <h3 class="plan__name">Site internet tout compris</h3>
+                <p class="plan__sub">Payé une seule fois</p>
+              </div>
+              <p class="plan__price"><span data-rovia-price="prixSite">1&nbsp;000&nbsp;€</span></p>
+            </div>
             <ul class="plan__list">
-              <li>Création du site sur mesure, à partir de la maquette, retravaillé jusqu’à ce qu’il vous plaise</li>
+              <li>Création sur mesure, à partir de la maquette, retravaillée jusqu’à ce qu’elle vous plaise</li>
               <li>Référencement Google sur votre métier et votre ville</li>
-              <li>Optimisation de votre fiche Google, avec un lien pour récolter des avis</li>
+              <li>Fiche Google optimisée, avec un lien pour récolter des avis</li>
               <li>Nom de domaine offert tant que Rovia héberge et gère votre site</li>
-              <li>Hébergement et maintenance : les modifications se font sur simple message</li>
+              <li>Hébergement et maintenance : modifications sur simple message</li>
               <li>Une vidéo de présentation pour vos réseaux sociaux</li>
             </ul>
             <a class="btn btn--primary btn--lg btn--block" href="#contact">Recevoir ma maquette gratuite</a>
           </article>
 
-          <article class="plan plan--ads" id="publicite" data-reveal>
-            <h3 class="plan__name">Publicité Google &amp; Facebook / Instagram</h3>
-            <p class="plan__price"><span class="plan__amount plan__amount--text">Sur devis</span></p>
-            <p class="plan__desc">En plus du site, je crée et je gère vos campagnes publicitaires pour vous amener des demandes de devis.</p>
-            <ul class="plan__list plan__list--plain">
-              <li><strong>Google Ads</strong> : votre annonce apparaît quand on cherche votre métier dans votre secteur.</li>
-              <li><strong>Facebook et Instagram</strong> : vos réalisations montrées aux habitants de votre zone.</li>
-              <li>Je prépare les annonces, je règle la zone et je suis les campagnes pour vous.</li>
+          <article class="plan plan--dark" id="publicite" data-reveal>
+            <div class="plan__head">
+              <div>
+                <h3 class="plan__name">Publicité Google &amp; Facebook / Instagram</h3>
+                <p class="plan__sub">En plus du site</p>
+              </div>
+              <p class="plan__price plan__price--quote">Sur devis</p>
+            </div>
+            <p class="plan__desc">Je crée et je gère vos campagnes pour vous amener des demandes de devis.</p>
+            <ul class="plan__list plan__list--two">
+              <li><b>Google Ads</b> : votre annonce quand on cherche votre métier dans votre secteur</li>
+              <li><b>Facebook et Instagram</b> : vos réalisations montrées aux habitants de votre zone</li>
             </ul>
-            <p class="plan__note">Le budget publicitaire est en plus, payé directement à Google ou à Meta.</p>
-            <a class="btn btn--ghost btn--block" href="#contact">Parler de publicité</a>
+            <p class="plan__note">Budget publicitaire en plus, payé directement à Google ou à Meta.</p>
+            <a class="btn btn--light btn--block" href="#contact">Parler de publicité</a>
           </article>
         </div>
       </div>
@@ -446,42 +506,52 @@
     <!-- Engagements -->
     <section class="section promises" id="engagements" aria-labelledby="promises-title">
       <div class="wrap">
-        <h2 class="h2 promises__title" id="promises-title" data-reveal>Mes engagements, <em>noir sur blanc.</em></h2>
-        <ul class="promises__list">
-          <li data-reveal>
-            <p class="promises__big">0&nbsp;€</p>
-            <h3>Maquette gratuite avant de payer</h3>
-            <p>Vous voyez votre site avant de dépenser quoi que ce soit. S’il ne vous plaît pas, vous ne devez rien.</p>
-          </li>
-          <li data-reveal>
-            <p class="promises__big">1 fois</p>
-            <h3>Un seul paiement</h3>
-            <p>Tout est compris dans le prix annoncé. Pas d’abonnement, pas de frais cachés.</p>
-          </li>
-          <li data-reveal>
-            <p class="promises__big">À vous</p>
-            <h3>Le site et le domaine à votre nom</h3>
-            <p>Votre site et votre nom de domaine vous appartiennent.</p>
-          </li>
-        </ul>
+        <div class="panel panel--dark promises__panel">
+          <h2 class="h2" id="promises-title" data-reveal>Mes engagements, <span class="accent">noir sur blanc.</span></h2>
+          <ul class="promises__list">
+            <li data-reveal>
+              <p class="promises__big">0&nbsp;€</p>
+              <h3>avant d’avoir vu votre maquette</h3>
+              <p>S’il ne vous plaît pas, vous ne devez rien.</p>
+            </li>
+            <li data-reveal>
+              <p class="promises__big">1 seul</p>
+              <h3>paiement, tout compris</h3>
+              <p>Pas d’abonnement, pas de frais cachés.</p>
+            </li>
+            <li data-reveal>
+              <p class="promises__big">100&nbsp;%</p>
+              <h3>à votre nom</h3>
+              <p>Votre site et votre nom de domaine vous appartiennent.</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- Qui est derrière Rovia -->
     <section class="section about" id="a-propos" aria-labelledby="about-title">
-      <div class="wrap about__inner">
-        <div class="about__photo" data-reveal>
-          <!-- PHOTO DE FLAVIO : remplacer ce bloc par <img src="assets/img/flavio.webp" alt="Flavio Kolmann, fondateur de Rovia" width="800" height="1000" loading="lazy"> -->
-          <div class="photo-slot" role="img" aria-label="Emplacement de la photo de Flavio">PHOTO DE FLAVIO – à ajouter</div>
-        </div>
-        <div class="about__text">
-          <h2 class="h2" id="about-title" data-reveal>Qui est derrière Rovia&nbsp;? <em>Moi, Flavio.</em></h2>
-          <div class="about__body" data-reveal>
-            <p>Je crée des sites internet pour les artisans et les entreprises locales, partout en France. Je suis originaire de Perpignan.</p>
-            <p>J’ai commencé par faire des sites pour des entreprises de mon entourage. Puis j’ai lancé Rovia, pour proposer la même chose à d’autres artisans.</p>
-            <p>Avec moi, vous avez un seul interlocuteur : celui qui dessine votre site est aussi celui qui vous répond.</p>
+      <div class="wrap">
+        <h2 class="about__big" id="about-title" data-reveal>Un vrai humain <span class="accent">derrière Rovia.</span></h2>
+        <div class="about__card" data-reveal>
+          <span class="device__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+          <div class="about__inner">
+            <div class="about__photo">
+              <!-- PHOTO DE FLAVIO : remplacer ce bloc par <img src="assets/img/flavio.webp" alt="Flavio Kolmann, fondateur de Rovia" width="600" height="600" loading="lazy"> -->
+              <div class="photo-slot" role="img" aria-label="Emplacement de la photo de Flavio">PHOTO DE FLAVIO – à ajouter</div>
+            </div>
+            <div class="about__text">
+              <p class="about__name">Flavio Kolmann<span>Fondateur de Rovia</span></p>
+              <p>Je crée des sites internet pour les artisans et les entreprises locales, partout en France. Je suis originaire de Perpignan.</p>
+              <p>J’ai commencé par faire des sites pour des entreprises de mon entourage. Puis j’ai lancé Rovia, pour proposer la même chose à d’autres artisans.</p>
+              <p>Avec moi, vous avez un seul interlocuteur : celui qui dessine votre site est aussi celui qui vous répond.</p>
+              <ul class="chips">
+                <li>Originaire de Perpignan</li>
+                <li>Un seul interlocuteur</li>
+                <li>Partout en France</li>
+              </ul>
+            </div>
           </div>
-          <p class="about__sign" data-reveal>Flavio Kolmann<span>Fondateur de Rovia</span></p>
         </div>
       </div>
     </section>
@@ -490,31 +560,35 @@
          Remplacer par de vrais avis, ou ajouter l'attribut hidden sur cette section. -->
     <section class="section reviews" id="avis" aria-labelledby="reviews-title" data-exemple>
       <div class="wrap">
-        <h2 class="h2" id="reviews-title" data-reveal>Ils m’ont fait <em>confiance.</em></h2>
+        <h2 class="h2" id="reviews-title" data-reveal>Ils m’ont fait <span class="accent">confiance.</span></h2>
         <ul class="reviews__grid">
           <!-- EXEMPLE – à remplacer par un vrai avis -->
           <li class="review" data-reveal>
             <span class="review__tag">Exemple</span>
-            <blockquote><p>« Il m’a montré la maquette avant que je paie quoi que ce soit. Le site final ressemble vraiment à mon entreprise. »</p></blockquote>
-            <p class="review__who"><span class="review__avatar" aria-hidden="true">P</span><span>Prénom N.<small>Menuisier</small></span></p>
+            <p class="review__stars" aria-label="5 sur 5">★★★★★</p>
+            <blockquote><p>« Flavio m’a montré la maquette avant que je paie quoi que ce soit. Le site final ressemble vraiment à mon entreprise. »</p></blockquote>
+            <p class="review__who"><span class="review__avatar review__avatar--blue" aria-hidden="true">J</span><span>Julien M.<small>Menuisier</small></span></p>
           </li>
           <!-- EXEMPLE – à remplacer par un vrai avis -->
           <li class="review" data-reveal>
             <span class="review__tag">Exemple</span>
-            <blockquote><p>« La visio a duré un quart d’heure depuis le chantier. Il a tout noté et tout corrigé. »</p></blockquote>
-            <p class="review__who"><span class="review__avatar" aria-hidden="true">P</span><span>Prénom N.<small>Maçon</small></span></p>
+            <p class="review__stars" aria-label="5 sur 5">★★★★★</p>
+            <blockquote><p>« La visio a duré un quart d’heure, depuis le chantier. Il a tout noté et tout corrigé dans la semaine. »</p></blockquote>
+            <p class="review__who"><span class="review__avatar review__avatar--sun" aria-hidden="true">K</span><span>Karim B.<small>Maçon</small></span></p>
           </li>
           <!-- EXEMPLE – à remplacer par un vrai avis -->
           <li class="review" data-reveal>
             <span class="review__tag">Exemple</span>
-            <blockquote><p>« Un prix clair, payé une fois. Quand je veux changer une photo, j’envoie un message. »</p></blockquote>
-            <p class="review__who"><span class="review__avatar" aria-hidden="true">P</span><span>Prénom N.<small>Paysagiste</small></span></p>
+            <p class="review__stars" aria-label="5 sur 5">★★★★★</p>
+            <blockquote><p>« Un prix clair, payé une fois. Quand je veux changer une photo, j’envoie un message et c’est fait. »</p></blockquote>
+            <p class="review__who"><span class="review__avatar review__avatar--green" aria-hidden="true">S</span><span>Sandrine L.<small>Paysagiste</small></span></p>
           </li>
           <!-- EXEMPLE – à remplacer par un vrai avis -->
           <li class="review" data-reveal>
             <span class="review__tag">Exemple</span>
-            <blockquote><p>« Mes clients me disent qu’ils ont trouvé mes réalisations sur le site avant d’appeler. »</p></blockquote>
-            <p class="review__who"><span class="review__avatar" aria-hidden="true">P</span><span>Prénom N.<small>Couvreur</small></span></p>
+            <p class="review__stars" aria-label="5 sur 5">★★★★★</p>
+            <blockquote><p>« Mes clients me disent qu’ils ont vu mes chantiers sur le site avant de m’appeler. »</p></blockquote>
+            <p class="review__who"><span class="review__avatar review__avatar--rose" aria-hidden="true">T</span><span>Thomas R.<small>Couvreur</small></span></p>
           </li>
         </ul>
       </div>
@@ -524,7 +598,7 @@
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq__inner">
         <header class="faq__head">
-          <h2 class="h2" id="faq-title" data-reveal>Vos questions, <em>mes réponses.</em></h2>
+          <h2 class="h2" id="faq-title" data-reveal>Vous hésitez ? <span class="accent">Demandez-moi.</span></h2>
           <p class="lead" data-reveal>Une autre question&nbsp;? Écrivez-moi à <a href="mailto:flavio@roviaagency.com" data-rovia-email>flavio@roviaagency.com</a>.</p>
         </header>
 
@@ -567,20 +641,21 @@
 
     <!-- Formulaire -->
     <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap contact__inner">
-        <div class="contact__intro">
-          <h2 class="h2" id="contact-title" data-reveal>Recevoir ma <em>maquette gratuite.</em></h2>
-          <p class="lead" data-reveal>Quelques infos suffisent. Je vous prépare votre maquette, puis je vous appelle pour vous la présenter.</p>
-          <ul class="contact__list" data-reveal>
-            <li>Gratuit et sans engagement</li>
-            <li>Réponse sous <span data-rovia="delaiReponse">24 h</span></li>
-            <li>Vos informations restent entre nous</li>
-          </ul>
-          <p class="contact__mail" data-reveal>Vous préférez écrire&nbsp;?<br><a href="mailto:flavio@roviaagency.com" data-rovia-email>flavio@roviaagency.com</a></p>
-        </div>
+      <div class="wrap">
+        <div class="panel panel--dark contact__panel">
+          <div class="contact__intro">
+            <h2 class="h2" id="contact-title" data-reveal>Votre maquette, <span class="accent">offerte.</span></h2>
+            <p class="lead" data-reveal>Quelques infos suffisent. Je vous prépare votre maquette, puis je vous appelle pour vous la présenter.</p>
+            <ul class="contact__list" data-reveal>
+              <li>Gratuit et sans engagement</li>
+              <li>Réponse sous <span data-rovia="delaiReponse">24 h</span></li>
+              <li>Vos informations restent entre nous</li>
+            </ul>
+            <p class="contact__mail" data-reveal>Vous préférez écrire&nbsp;?<br><a href="mailto:flavio@roviaagency.com" data-rovia-email>flavio@roviaagency.com</a></p>
+          </div>
 
-        <div class="contact__panel" data-reveal>
-          <form class="form" action="https://api.web3forms.com/submit" method="POST" data-form>
+          <div class="contact__card" data-reveal>
+            <form class="form" action="https://api.web3forms.com/submit" method="POST" data-form>
             <input type="hidden" name="access_key" value="" data-form-key>
             <input type="hidden" name="subject" value="Nouvelle demande de maquette (roviaagency.com)">
             <input type="hidden" name="from_name" value="Site Rovia">
@@ -645,6 +720,7 @@
             <h3 class="form-done__title">C’est reçu, merci&nbsp;!</h3>
             <p>Je reviens vers vous sous <span data-rovia="delaiReponse">24 h</span>. Votre maquette sera prête sous <span data-rovia="delaiMaquette">48 h</span>.</p>
           </div>
+          </div>
         </div>
       </div>
     </section>
@@ -674,6 +750,7 @@
           </ul>
         </nav>
       </div>
+      <p class="footer__word" aria-hidden="true">Rovia</p>
       <div class="footer__bottom">
         <p>© <span data-year>2026</span> Rovia. Tous droits réservés.</p>
         <a href="#top" class="footer__top-link">Haut de page</a>

@@ -20,7 +20,7 @@
 
   $$("[data-rovia-price]").forEach(function (el) {
     var v = C[el.getAttribute("data-rovia-price")];
-    if (typeof v === "number") el.textContent = new Intl.NumberFormat("fr-FR").format(v) + " €";
+    if (typeof v === "number") el.textContent = new Intl.NumberFormat("fr-FR").format(v).replace(/\u202f/g, "\u00a0") + "\u00a0€";
   });
 
   if (C.email) {
@@ -103,11 +103,78 @@
           revealIO.unobserve(x.target);
         });
       }, { rootMargin: "0px 0px -8% 0px" });
-      $$("[data-reveal]").forEach(function (el) { revealIO.observe(el); });
+      $$("[data-reveal], [data-step-card]").forEach(function (el) { revealIO.observe(el); });
     }
   } else {
     html.classList.remove("js-anim");
   }
+
+  // Joue une fonction en boucle seulement quand l'élément est à l'écran.
+  function whenVisible(el, onShow, onHide) {
+    if (!("IntersectionObserver" in window)) return onShow();
+    new IntersectionObserver(function (en) { en[0].isIntersecting ? onShow() : onHide(); }, { threshold: 0.25 }).observe(el);
+  }
+
+  /* 4. Notifications d'exemple du haut de page ---------------------------- */
+  (function initToasts() {
+    var wrap = $("[data-toasts]");
+    if (!wrap || reduced) return;
+    var toasts = $$(".toast", wrap), i = 0, timer = null;
+    function next() {
+      toasts[i].classList.remove("is-active");
+      i = (i + 1) % toasts.length;
+      toasts[i].classList.add("is-active");
+    }
+    whenVisible(wrap, function () { if (!timer) timer = setInterval(next, 3400); },
+      function () { clearInterval(timer); timer = null; });
+  })();
+
+  /* 5. « Ce que votre site fait pour vous » : onglets + parcours animé --- */
+  (function initJobs() {
+    var panel = $(".jobs__panel");
+    if (!panel) return;
+    var buttons = $$("[data-job]", panel);
+    var items = $$("[data-step]", panel);
+    var current = 0, timer = null, paused = false, lights = [];
+
+    function setActive(n) {
+      current = n;
+      buttons.forEach(function (b, k) {
+        b.classList.toggle("is-active", k === n);
+        b.setAttribute("aria-pressed", String(k === n));
+      });
+      lights.forEach(clearTimeout); lights = [];
+      var delay = 0;
+      items.forEach(function (el) {
+        var s = +el.getAttribute("data-step");
+        if (s < n || reduced) { el.classList.toggle("is-lit", s <= n); return; }
+        el.classList.remove("is-lit");
+        if (s === n) {
+          lights.push(setTimeout(function () { el.classList.add("is-lit"); }, delay));
+          delay += 450;
+        }
+      });
+      // Relance la barre de progression de l'onglet actif.
+      panel.classList.remove("is-playing");
+      void panel.offsetWidth;
+      if (timer) panel.classList.add("is-playing");
+    }
+    function start() {
+      if (reduced || timer || paused) return;
+      timer = setInterval(function () { setActive((current + 1) % buttons.length); }, 5500);
+      panel.classList.add("is-playing");
+    }
+    function stop() { clearInterval(timer); timer = null; panel.classList.remove("is-playing"); }
+
+    buttons.forEach(function (b, k) { b.addEventListener("click", function () { stop(); setActive(k); start(); }); });
+    panel.addEventListener("pointerenter", function () { paused = true; stop(); });
+    panel.addEventListener("pointerleave", function () { paused = false; start(); });
+    panel.addEventListener("focusin", function () { paused = true; stop(); });
+    panel.addEventListener("focusout", function () { paused = false; start(); });
+
+    setActive(0);
+    whenVisible(panel, function () { setActive(current); start(); }, stop);
+  })();
 
   // Les liens du menu ferment le menu.
   if (menu) menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
